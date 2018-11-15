@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: AUTH
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
