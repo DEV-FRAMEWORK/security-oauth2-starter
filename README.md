@@ -1,4 +1,7 @@
 # README #
+## Spring OAuth2.0
+### AuthorizationServer(권한관리서버)
+@EnableAuthorizationServer
 
 This README would normally document whatever steps are necessary to get your application up and running.
 

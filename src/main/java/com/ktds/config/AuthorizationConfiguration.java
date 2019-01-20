@@ -25,29 +25,37 @@ public class AuthorizationConfiguration extends AuthorizationServerConfigurerAda
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.inMemory()
-//                .withClient("msa")
-//                .secret("1234")
-//                .authorities("ROLE_USER")
-//                .scopes("read","write")
-//                .resourceIds("A-API")
-//                .authorizedGrantTypes("client_credentials");
-
         clients.inMemory()
-                .withClient("client1")
-                .secret("client1_pass")
-                .scopes("read", "write")
-                .authorizedGrantTypes("authorization_code")
+                .withClient("msa")
+                .secret("1234")
+                .authorities("ROLE_USER")
+                .scopes("read","write")
                 .resourceIds("A-API")
-                .accessTokenValiditySeconds(60*60*16)  	//16시간
-                .refreshTokenValiditySeconds(60*60*20); 	//20시간
+                .authorizedGrantTypes("password");
+
+//        clients.inMemory()
+//                .withClient("user1")
+//                .secret("12345678")
+//                .scopes("read", "write")
+//                .authorizedGrantTypes("authorization_code")
+//                .resourceIds("A-API")
+//                .accessTokenValiditySeconds(60*60*16)  	//16시간
+//                .refreshTokenValiditySeconds(60*60*20); 	//20시간
+//        clients.inMemory()
+//        .withClient("client1")
+//        .secret("client1_pass")
+//        .scopes("read", "write")
+//        .authorizedGrantTypes("password", "authorization_code", "refresh_token")
+//        .resourceIds("A-API")
+//        .accessTokenValiditySeconds(60*60*16)  	//16시간
+//        .refreshTokenValiditySeconds(60*60*20); 	//20시간
     }
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter(){
         final JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        KeyPair keyPair = new KeyStoreKeyFactory(new ClassPathResource("ktmns.jks"), "new1234!".toCharArray())
-                .getKeyPair("ktmns", "new1234!".toCharArray());
+        KeyPair keyPair = new KeyStoreKeyFactory(new ClassPathResource("ktds.jks"), "new1234!".toCharArray())
+                .getKeyPair("ktds", "new1234!".toCharArray());
         converter.setKeyPair(keyPair);
         return converter;
     }
