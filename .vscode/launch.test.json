@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "auth",
+                "projectName": "auth",
+                "workingDirectory": "/Users/yonghuipark/devplay/devProject/security-oauth2-starter",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "auth",
+                "projectName": "auth",
+                "workingDirectory": "/Users/yonghuipark/devplay/devProject/security-oauth2-starter",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
