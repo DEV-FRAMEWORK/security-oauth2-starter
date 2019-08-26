@@ -26,8 +26,8 @@ public class AuthorizationConfiguration extends AuthorizationServerConfigurerAda
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("msa")
-                .secret("1234")
+                .withClient("client_id")
+                .secret("client_pw")
                 .authorities("ROLE_USER")
                 .scopes("read","write")
                 .resourceIds("A-API")
